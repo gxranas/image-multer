@@ -12,7 +12,7 @@ mongoose.connect('mongodb+srv://codewithgeo:angcuteko01234@e-commerce.9etdyjt.mo
 
 const storage = multer.diskStorage({
     destination: (req,file,cb) =>{
-    cb(null, 'public/images')
+    cb(null, `${process.cwd()}/public/images`)
     },
     filename: (req,file,cb) => {
         cb(null,file.fieldname + "_" + Date.now() + path.extname(file.originalname) )
